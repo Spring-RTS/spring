@@ -27,6 +27,7 @@ namespace springproc {
 		);
 	#else
 		#ifdef __x86_64__
+                printf("%s(%p, %p, %p, %p)\n", __func__, a, b, c, d);
 			__asm__ __volatile__(
 				"pushq %%rbx\n\t"
 				"cpuid\n\t"

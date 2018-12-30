@@ -254,7 +254,7 @@ static constexpr std::array<double, 11> v = {
 };
 
 
-static constexpr inline double Pow10d(unsigned i)
+static inline double Pow10d(unsigned i)
 {
 	return (i<v.size()) ? v[i] : std::pow(double(10), i);
 }

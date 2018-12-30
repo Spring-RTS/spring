@@ -237,6 +237,8 @@ void CGlobalRendering::PostInit() {
 
 	// some GLSL relevant information
 	{
+#define GL_MAX_UNIFORM_BUFFER_BINDINGS 0x8A2F
+#define GL_MAX_UNIFORM_BLOCK_SIZE 0x8A30
 		glGetIntegerv(GL_MAX_UNIFORM_BUFFER_BINDINGS, &glslMaxUniformBufferBindings);
 		glGetIntegerv(GL_MAX_UNIFORM_BLOCK_SIZE,      &glslMaxUniformBufferSize);
 		glGetIntegerv(GL_MAX_VARYING_FLOATS,          &glslMaxVaryings);

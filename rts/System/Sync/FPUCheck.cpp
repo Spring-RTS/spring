@@ -4,6 +4,8 @@
 	#include <valgrind/valgrind.h>
 #endif
 
+#include <string>
+
 #include "FPUCheck.h"
 #include "lib/streflop/streflop_cond.h"
 #include "System/Exceptions.h"
@@ -145,7 +147,7 @@ void good_fpu_init()
 	if (hasSSE1) {
 		LOG("\tusing streflop SSE FP-math mode, CPU supports SSE instructions");
 	} else {
-		throw unsupported_error("CPU is missing SSE instruction support");
+		throw unsupported_error(std::string("CPU is missing SSE instruction support"));
 	}
 	#else
 	if (hasSSE1) {

@@ -269,7 +269,9 @@ COffscreenGLThread::COffscreenGLThread(boost::function<void()> f) :
 	thread(NULL),
 	glOffscreenCtx() //! may trigger an opengl_error exception!
 {
-	thread = new boost::thread( boost::bind(&COffscreenGLThread::WrapFunc, this, f) );
+	boost::thread::attributes attrs;
+	attrs.set_stack_size(1024 * 1024);
+	thread = new boost::thread( attrs, boost::bind(&COffscreenGLThread::WrapFunc, this, f) );
 }
 
 

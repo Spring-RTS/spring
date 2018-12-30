@@ -42,3 +42,11 @@ namespace streflop {
 #endif
 
 }
+
+namespace streflop_libm {
+
+    const Simple SimpleZero(0.0f);
+    extern const Simple SimplePositiveInfinity;
+    const Simple SimplePositiveInfinity = Simple(1.0f) / SimpleZero;
+
+}
